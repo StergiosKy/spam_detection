@@ -82,9 +82,7 @@ for i in range(len(rawtext)):
     dataset.append(temp_data)
 print('Finished pre-processing, proceeding to transform the input dataset . . .')
 # transform the dataset
-print(type(dataset))
 dataset = [list(dataset[i]) for i in range(len(dataset))]
-print(type(dataset))
 # after appending everything convert to tf-idf matrix
 tfidf_vectorizer = TfidfVectorizer(tokenizer=identity_tokenizer, lowercase=False)
 input_ = tfidf_vectorizer.fit_transform(dataset).toarray()
